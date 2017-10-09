@@ -1,7 +1,7 @@
 ## Geosoft2
 
-##Introduction
-#Modern satellite-based Earth observation (EO) data are an invaluable source for monitoring, modeling, and understanding global environmental phenomena. Examples such as Global Forest Watch (http://www.globalforestwatch.org/map/) demonstrate their usage in practical applications. The acquisition and analysis of the data by scientists typically follows the following steps:
+# Introduction
+Modern satellite-based Earth observation (EO) data are an invaluable source for monitoring, modeling, and understanding global environmental phenomena. Examples such as Global Forest Watch (http://www.globalforestwatch.org/map/) demonstrate their usage in practical applications. The acquisition and analysis of the data by scientists typically follows the following steps:
 1. Selecting and ordering satellite images on portals of the data providers such as NASA, USGS, or ESA
 2. Waiting until requested data have been collected from the provider’s archive
 3. Downloading the data to local hard drives

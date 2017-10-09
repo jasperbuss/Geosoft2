@@ -1,46 +1,72 @@
-## Geosoft2
+# Geosoft2
 
-# Introduction
+## Introduction
 Modern satellite-based Earth observation (EO) data are an invaluable source for monitoring, modeling, and understanding global environmental phenomena. Examples such as Global Forest Watch (http://www.globalforestwatch.org/map/) demonstrate their usage in practical applications. The acquisition and analysis of the data by scientists typically follows the following steps:
 1. Selecting and ordering satellite images on portals of the data providers such as NASA, USGS, or ESA
 2. Waiting until requested data have been collected from the provider’s archive
 3. Downloading the data to local hard drives
 4. Analysing the data with common desktop applications
+###
 Due to the data volume of recent EO missions such as the European Copernicus program and its Sentinel satellites, this workflow becomes increasingly inefficient. As an alternative, many cloud computing providers like Amazon Web Services (AWS) or the Earth Observation Data Centre (EODC) recently started to make the data available in their infrastructures. Hosted applications and services therefore get efficient access to the data.
+###
 In this project, a new web-based platform that allows working interactively with Sentinel 2 images shall be developed. Users of that platform shall particularly be able to
-- search and select available Sentinel2 imagery,
-- visualize selected images interactively in a map with zoom and pan functionality as
+* search and select available Sentinel2 imagery,
+* visualize selected images interactively in a map with zoom and pan functionality as
 well as selecting spectral bands and visualization parameters, and
-- perform simple arithmetic expressions to combine spectral bands (e.g. for deriving
+* perform simple arithmetic expressions to combine spectral bands (e.g. for deriving
 vegetation indexes) and visualize the results.
-Objectives
-The platform to be implemented in an easy to use web interface shall allow users to interactively select and visualize Sentinel 2 images and to perform simple computations on the data. Images shall be drawn in a web-based map application. Zoom and pan functionality as well as the selection of spectral bands, their assignment to RGB channels must be implemented. The complete functionality shall be accessible through the browser in a single web site.
- 1
+
+## Objectives
+# The platform to be implemented in an easy to use web interface shall allow users to interactively select and visualize Sentinel 2 images and to perform simple computations on the data. Images shall be drawn in a web-based map application. Zoom and pan functionality as well as the selection of spectral bands, their assignment to RGB channels must be implemented. The complete functionality shall be accessible through the browser in a single web site.
+
 Scope and boundary conditions
 The principal provides a computing infrastructure with sample Sentinel 2 imagery.
 Functional Requirements
 Data discovery
-/LF00010/ /LF00020/ /LF00030/
-/LF00040/ /LF00050/
-/LF00060/
-Users shall be able to search for (sub)strings of the image/scene Intentifier (see https://earth.esa.int/web/sentinel/user-guides/sentinel-2- msi/naming-convention)
-Users shall be able to search images based on their spatial extent by drawing a rectangle in a map such that search results only contain images that spatially intersect with the rectangle.
-Users shall be able to search images based on their recording date such that only images that have been captured after a given starting date and before a given end date are part of the search results. Users may specify both or only one of two dates.
-All search criteria are optional and combined with a logical AND. If none of the criteria is given, all available images shall be contained in the result.
-Search results are displayed in a (paged) list as well as in a map. The map shall show the spatial extent of result images. The list shall be sorted by recording date in descending order.
-Users get further information and metadata of images when they select an image in the list or in the map. A selected image can be visualized as described below.
-Data visualization
-/LF01010/ /LF01020/
-/LF01030/ /LF01040/ /LF01050/
-Users shall be able to change base maps of the interactive map.
-The map shall include zoom and pan functionality and display Sentinel 2 images with the respective resolution.
-Users shall be able to visualize Sentinel 2 images either as one channel grayscale image or as RGB color image.
-Users shall be able to select, which spectral bands of the input shall be visualized and relate to red, green, blue, or the grayscale channel.
-To allow some contrast brightness adjustments, users shall be able to define maximum and minimum values for each visualized spectral band. For 8-bit color channels, minimum values should be mapped to 0 and
-2
-/LF01060/ /LF01070/ /LF01080/
-maximum values should be mapped to 255 with a linear scaling between the specified numbers.
-Images can be drawn with transparency, which is specified by the user between 0% and 100%.
+* /LF00010/   Users shall be able to search for (sub)strings of the image/scene Intentifier (see https://earth.esa.int/web/sentinel/user-guides/sentinel-2- msi/naming-convention)
+
+* /LF00020/   Users shall be able to search images based on their spatial extent by drawing
+              a rectangle in a map such that search results only contain images that spatially intersect with the rectangle.
+
+* /LF00030/   Users shall be able to search images based on their recording date such
+              that only images that have been captured after a given starting date and before a given end date are part of the search results. Users may specify both or only one of two dates.
+* /LF00040/   All search criteria are optional and combined with a logical AND. If none of
+              the criteria is given, all available images shall be contained in the result.
+
+* /LF00050/   Search results are displayed in a (paged) list as well as in a map. The
+              map shall show the spatial extent of result images. The list shall be sorted by recording date in descending order.
+
+* /LF00060/   Users get further information and metadata of images when they select an
+              image in the list or in the map. A selected image can be visualized as described below.
+
+
+
+
+
+
+##Data visualization
+* /LF01010/   Users shall be able to change base maps of the interactive map.
+
+* /LF01020/   The map shall include zoom and pan functionality and display Sentinel 2
+              images with the respective resolution.
+
+* /LF01030/   Users shall be able to visualize Sentinel 2 images either as one
+              channel grayscale image or as RGB color image.
+
+* /LF01040/   Users shall be able to select, which spectral bands of the input
+              shall be visualized and relate to red, green, blue, or the grayscale channel.
+
+* /LF01050/   To allow some contrast brightness adjustments, users shall be able to
+              define maximum and minimum values for each visualized spectral band. For 8-bit color channels, minimum values should be mapped to 0 and maximum values should be mapped to 255 with a linear scaling between the specified numbers.
+
+* /LF01060/     Images can be drawn with transparency, which is specified by the user
+              between 0% and 100%.
+
+* /LF01070/
+
+* /LF01080/
+
+
 All visualization parameters shall be adjustable interactively in the user interface without need to reload the application.
 A mouse click on the map returns the original Sentinel-2 measurement values at the particular location.
 Miscellaneous

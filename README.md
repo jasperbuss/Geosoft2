@@ -17,12 +17,14 @@ well as selecting spectral bands and visualization parameters, and
 vegetation indexes) and visualize the results.
 
 ## Objectives
-# The platform to be implemented in an easy to use web interface shall allow users to interactively select and visualize Sentinel 2 images and to perform simple computations on the data. Images shall be drawn in a web-based map application. Zoom and pan functionality as well as the selection of spectral bands, their assignment to RGB channels must be implemented. The complete functionality shall be accessible through the browser in a single web site.
+### The platform to be implemented in an easy to use web interface shall allow users to interactively select and visualize Sentinel 2 images and to perform simple computations on the data. Images shall be drawn in a web-based map application. Zoom and pan functionality as well as the selection of spectral bands, their assignment to RGB channels must be implemented. The complete functionality shall be accessible through the browser in a single web site.
 
-Scope and boundary conditions
+### Scope and boundary conditions
 The principal provides a computing infrastructure with sample Sentinel 2 imagery.
-Functional Requirements
-Data discovery
+
+## Functional Requirements
+### Data discovery
+
 * /LF00010/   Users shall be able to search for (sub)strings of the image/scene Intentifier (see https://earth.esa.int/web/sentinel/user-guides/sentinel-2- msi/naming-convention)
 
 * /LF00020/   Users shall be able to search images based on their spatial extent by drawing
@@ -59,28 +61,44 @@ Data discovery
 * /LF01050/   To allow some contrast brightness adjustments, users shall be able to
               define maximum and minimum values for each visualized spectral band. For 8-bit color channels, minimum values should be mapped to 0 and maximum values should be mapped to 255 with a linear scaling between the specified numbers.
 
-* /LF01060/     Images can be drawn with transparency, which is specified by the user
+* /LF01060/   Images can be drawn with transparency, which is specified by the user
               between 0% and 100%.
 
-* /LF01070/
+* /LF01070/   All visualization parameters shall be adjustable interactively in
+              the user interface without need to reload the application.
 
-* /LF01080/
+* /LF01080/   A mouse click on the map returns the original Sentinel-2
+              measurement values at the particular location.
 
 
-All visualization parameters shall be adjustable interactively in the user interface without need to reload the application.
-A mouse click on the map returns the original Sentinel-2 measurement values at the particular location.
-Miscellaneous
-/LF02010/ The complete functionality is available in a single web application without registration.
-/LF02020/ The current state of the application (including visualization parameters) is shareable by a unique link.
-Bonus Features
-In addition to mandatory functional requirements, the contractor may implement bonus features as described below. Successful implementation of the features will be considered in the final product evaluation.
-Data processing (bonus features)
-/LX01010/
-/LX01020/ /LX01030/
-Users shall be able to define simple arithmetic expressions to compute new (derived) bands for an image. Expressions shall be evaluated per pixel and shall get access to the values of the original spectral bands at the same pixel. The syntax of the expressions should be as simple as possible and support at least addition, subtraction, multiplication, division, root and power functions, and their combination including brackets.
-Image bands derived by arithmetic expressions shall be visualizable in the same way as the original spectral bands.
-Users shall be able to mask visualized pixels with a simple logical expression (<, <=, ==, >=, >, !=, !, and, or, and combinations with brackets). Similar to the arithmetic expressions, logical masking expressions shall be evaluated per pixel and shall include values of the original spectral bands (e.g. band1 < 5), as well as values of the derived bands (e.g. ndvi > 0.3).
-3
+
+
+## Miscellaneous
+
+* /LF02010/   The complete functionality is available in a single web
+              application without registration.
+
+* /LF02020/   The current state of the application (including visualization parameters)
+              is shareable by a unique link.
+
+# Bonus Features
+
+### In addition to mandatory functional requirements, the contractor may implement bonus features as described below. Successful implementation of the features will be considered in the final product evaluation.
+
+## Data processing (bonus features)
+
+* /LX01010/   Users shall be able to define simple arithmetic expressions to
+              compute new (derived) bands for an image. Expressions shall be evaluated per pixel and shall get access to the values of the original spectral bands at the same pixel. The syntax of the expressions should be as simple as possible and support at least addition, subtraction, multiplication, division, root and power functions, and their combination including brackets.
+
+* /LX01020/     Image bands derived by arithmetic expressions shall be visualizable
+              in the same way as the original spectral bands.
+
+* /LX01030/     Users shall be able to mask visualized pixels with a simple logical
+              expression (<, <=, ==, >=, >, !=, !, and, or, and combinations with brackets). Similar to the arithmetic expressions, logical masking expressions shall be evaluated per pixel and shall include values of the original spectral bands (e.g. band1 < 5), as well as values of the derived bands (e.g. ndvi > 0.3).
+
+
+
+
 /LX01040/ Summary statistics (min, max, median, mean, standard deviation) of the currently visible part of an image shall be computed per band and displayed to users.
 Nonfunctional Requirements
 Portability

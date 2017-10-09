@@ -90,40 +90,48 @@ The principal provides a computing infrastructure with sample Sentinel 2 imagery
 * /LX01010/   Users shall be able to define simple arithmetic expressions to
               compute new (derived) bands for an image. Expressions shall be evaluated per pixel and shall get access to the values of the original spectral bands at the same pixel. The syntax of the expressions should be as simple as possible and support at least addition, subtraction, multiplication, division, root and power functions, and their combination including brackets.
 
-* /LX01020/     Image bands derived by arithmetic expressions shall be visualizable
+* /LX01020/   Image bands derived by arithmetic expressions shall be visualizable
               in the same way as the original spectral bands.
 
-* /LX01030/     Users shall be able to mask visualized pixels with a simple logical
+* /LX01030/   Users shall be able to mask visualized pixels with a simple logical
               expression (<, <=, ==, >=, >, !=, !, and, or, and combinations with brackets). Similar to the arithmetic expressions, logical masking expressions shall be evaluated per pixel and shall include values of the original spectral bands (e.g. band1 < 5), as well as values of the derived bands (e.g. ndvi > 0.3).
 
 
+* /LX01040/   Summary statistics (min, max, median, mean, standard deviation)
+              of the currently visible part of an image shall be computed per band and displayed to users.
 
 
-/LX01040/ Summary statistics (min, max, median, mean, standard deviation) of the currently visible part of an image shall be computed per band and displayed to users.
-Nonfunctional Requirements
-Portability
+## Nonfunctional Requirements
+### Portability
+
 The user interface must support all popular web browsers by providing a similar user experience. The layout should primarily target at laptop or desktop computers with moderate to large display devices.
-Maintainability
+
+## Maintainability
 An established build and configuration system as well as dependency management must be applied for the used Programming language, e.g. Maven or Gradle for Java, or Grunt/Bower for JavaScript. According documentation on building, configuring and installing the system must be provided in Markdown-formatted documentation files using the appropriate markup for lists, links, etc.
-Licensing
+
+## Licensing
 The complete system must be published under an open-source license approved by the Open Source Initiative (see https://opensource.org/licenses). The contractor must ensure compatibility of the selected license with all used libraries.
-Usability
+
+## Usability
 The system must support intuitive use to the extent that targeted groups can use its main features without further documentation. Common practices for web-based user interfaces and interaction paradigms should be applied.
-Performance
+
+## Performance
 The interactive visualisations must react within 0.5 seconds to give a user the impression of direct manipulation. Complex operations may be performed asynchronously such that the user-interface never freezes.
-Boundary conditions
+
+## Boundary conditions
 The system developed by the contractor must be given an appealing product name with high recall value. The product name is used throughout the source code and documentation of the system.
 The language of the user interface is English.
- 4
-Deliveries
+
+## Deliveries
 The delivery of the product consists of the following parts:
-- Documented source code published in a single repository on GitHub
+* Documented source code published in a single repository on GitHub
 (https://github.com)
-- Installation instructions
-- User manual (can be integrated into the product)
-- Report on the fulfillment of functional requirements
-- A running installation on the provided infrastructure
-Acceptance Criteria
+* Installation instructions
+* User manual (can be integrated into the product)
+* Report on the fulfillment of functional requirements
+* A running installation on the provided infrastructure
+
+## Acceptance Criteria
 The product is considered as being accepted by fulfillment of all functional and nonfunctional requirements, a successful presentation and demonstration of the product by the contractor, and the delivery of all product parts as described above. Implementation of the bonus features is optional but will be considered during product evaluation.
-Miscellaneous
+## Miscellaneous
 The contractor is asked for creating a detailed concept and product specification until Oct. 23, 2017. In case any changes are needed during the project implementation, the contractor is obliged to immediately submit a change request to the principal.
